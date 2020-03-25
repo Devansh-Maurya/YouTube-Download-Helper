@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Y2Mate Download Helper</string>
+    <string name="choose_a_default_browser">Choose a default browser</string>
+    <string name="default_explanation">This browser will be opened automatically for downloading the video. To change your preference, open this app again and choose another browser</string>
 </resources>
