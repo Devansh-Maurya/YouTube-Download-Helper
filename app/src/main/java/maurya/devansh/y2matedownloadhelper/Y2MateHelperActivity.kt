@@ -1,5 +1,6 @@
 package maurya.devansh.y2matedownloadhelper
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -13,17 +14,19 @@ class Y2MateHelperActivity : AppCompatActivity() {
         when {
             intent?.action == Intent.ACTION_SEND -> {
                 if (intent.type == "text/plain") {
+                    val defaultBrowser = getDefaultBrowser()
                     openUrlInBrowser(getY2MateDownloaderUrl(
-                        intent.getStringExtra(Intent.EXTRA_TEXT) ?: "").toString())
+                        intent.getStringExtra(Intent.EXTRA_TEXT) ?: "").toString(),
+                        defaultBrowser)
                 }
             }
         }
         finish()
     }
 
-    private fun openUrlInBrowser(url: String) {
+    private fun openUrlInBrowser(url: String, browserPackageName: String) {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-        intent.setPackage("com.android.chrome")
+        intent.setPackage(browserPackageName)
         startActivity(intent)
     }
 
@@ -36,5 +39,11 @@ class Y2MateHelperActivity : AppCompatActivity() {
             .appendPath("youtube")
             .appendPath(videoId)
             .build()
+    }
+
+    private fun getDefaultBrowser(): String {
+        val prefs = getSharedPreferences(BrowserChooserActivity.BROWSER_PREF, Context.MODE_PRIVATE)
+        return prefs.getString(BrowserChooserActivity.DEFAULT_BROWSER,
+            "com.android.chrome") ?: "com.android.chrome"
     }
 }
