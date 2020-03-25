@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name="maurya.devansh.youtubedownloadhelper.Y2MateHelperActivity"
+        <activity android:name="maurya.devansh.youtubedownloadhelper.DownloadHelperActivity"
             android:label="@string/download_video"
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
