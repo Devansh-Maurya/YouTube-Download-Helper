@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Youtube Download Helper</string>
+    <string name="app_name">YouTube Download Helper</string>
     <string name="choose_a_default_browser">Choose a default browser</string>
-    <string name="default_explanation">The default browser will be opened automatically for downloading the video. To change your preference, open this app again and choose another browser.\n\n<b>Open your Youtube app and after clicking on share icon, click on icon named Youtube Download Helper for downloading the video</b></string>
-    <string name="introduction">Welcome to <b>Youtube Download Helper</b>. This app helps you to download YouTube videos with the help of a website called Y2Mate, which is opened in a web browser chosen by you in the app. Close this dialog to choose your default browser and start downloading videos seamlessly.\n\n<b>Open your Youtube app and after clicking on share icon, click on icon named Youtube Download Helper for downloading the video.</b></string>
-    <string name="download_video">Dowload video</string>
+    <string name="default_explanation">The default browser will be opened automatically for downloading the video. To change your preference, open this app again and choose another browser.\n\n<b>Open your YouTube app and after clicking on share icon, click on icon named Youtube Download Helper for downloading the video</b></string>
+    <string name="introduction">Welcome to <b>Youtube Download Helper</b>. This app helps you to download YouTube videos with the help of a website called Y2Mate, which is opened in a web browser chosen by you in the app. Close this dialog to choose your default browser and start downloading videos seamlessly.\n\n<b>Open your YouTube app and after clicking on share icon, click on icon named Youtube Download Helper for downloading the video.</b></string>
+    <string name="download_video">Download video</string>
 </resources>
