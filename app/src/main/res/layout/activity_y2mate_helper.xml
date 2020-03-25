@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".Y2MateHelperActivity">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Nothing"
+        android:textSize="40sp"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
