@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".BrowserChooserActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        android:elevation="10dp"
+        app:title="@string/app_name"/>
+
     <TextView
         android:id="@+id/defaultBrowserTV"
         android:layout_width="match_parent"
@@ -17,7 +27,7 @@
         android:text="@string/choose_a_default_browser"
         android:textColor="@android:color/black"
         android:textSize="30sp"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TextView
         android:id="@+id/descriptionTV"
