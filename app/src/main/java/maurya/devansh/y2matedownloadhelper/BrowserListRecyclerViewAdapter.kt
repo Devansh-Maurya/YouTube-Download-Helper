@@ -8,12 +8,13 @@ import androidx.recyclerview.widget.RecyclerView
  * Created by Devansh on 25/3/20
  */
 
-class BrowserListRecyclerViewAdapter(private val browsersList: List<String>)
+class BrowserListRecyclerViewAdapter(private val browsersList: List<String>,
+                                     private val clickAction: (String) -> Unit)
     : RecyclerView.Adapter<BrowserItemViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BrowserItemViewHolder =
         BrowserItemViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_browser_list, parent, false))
+            .inflate(R.layout.item_browser_list, parent, false), clickAction)
 
     override fun getItemCount(): Int = browsersList.size
 

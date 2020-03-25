@@ -10,12 +10,17 @@ import kotlinx.android.synthetic.main.item_browser_list.view.*
  * Created by Devansh on 25/3/20
  */
 
-class BrowserItemViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+class BrowserItemViewHolder(private val view: View, private val clickAction: (String) -> Unit) : RecyclerView.ViewHolder(view) {
 
     fun bind(packageName: String) {
         view.apply {
             browserIconView.setImageDrawable(getBrowserIcon(packageName))
-            browserNameTV.text = getBrowserName(packageName)
+
+            val browserName = getBrowserName(packageName)
+            browserNameTV.text = browserName
+            setOnClickListener {
+                clickAction(packageName)
+            }
         }
     }
 
