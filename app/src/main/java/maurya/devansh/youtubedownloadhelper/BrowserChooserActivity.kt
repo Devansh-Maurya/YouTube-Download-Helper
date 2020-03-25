@@ -19,6 +19,7 @@ class BrowserChooserActivity : AppCompatActivity() {
     companion object {
         const val BROWSER_PREF = "browser_pref"
         const val DEFAULT_BROWSER = "default_browser"
+        const val FIRST_LAUNCH = "first_launch"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +33,11 @@ class BrowserChooserActivity : AppCompatActivity() {
         recyclerView.adapter =
             BrowserListRecyclerViewAdapter(makeBrowserPackageNamesList(browserResolverInfoList)) {
                 createConfirmationDialog(it)
+        }
+
+        if (isFirstLauch){
+            showInfoDialog()
+            isFirstLauch = false
         }
     }
 
@@ -84,4 +90,31 @@ class BrowserChooserActivity : AppCompatActivity() {
         val applicationInfo = pm.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
         return pm.getApplicationLabel(applicationInfo)
     }
+
+    private fun showInfoDialog() {
+
+        val dialogTitleBold = buildSpannedString {
+            bold {
+                append("Welcome!")
+            }
+        }
+
+        MaterialAlertDialogBuilder(this, R.style.ThemeOverlay_MaterialComponents_MaterialAlertDialog_Centered)
+            .setTitle(dialogTitleBold)
+            .setMessage(R.string.introduction)
+            .setPositiveButton("Ok",null)
+            .show()
+    }
+
+    private var isFirstLauch : Boolean
+        get() {
+            val prefs = getSharedPreferences(BROWSER_PREF,Context.MODE_PRIVATE)
+            return prefs.getBoolean(FIRST_LAUNCH, true)
+        }
+        set(value) {
+            val prefs = getSharedPreferences(BROWSER_PREF,Context.MODE_PRIVATE)
+            prefs.edit {
+                putBoolean(FIRST_LAUNCH, value)
+            }
+        }
 }
