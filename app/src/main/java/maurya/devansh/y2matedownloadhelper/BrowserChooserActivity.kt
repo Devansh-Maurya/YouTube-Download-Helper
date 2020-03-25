@@ -73,6 +73,7 @@ class BrowserChooserActivity : AppCompatActivity() {
             .setMessage(dialogMessage)
             .setPositiveButton("Yes") { _: DialogInterface?, _: Int ->
                 setDefaultBrowser(packageName)
+                recyclerView.adapter?.notifyDataSetChanged()
             }
             .setNegativeButton("No", null)
             .show()
