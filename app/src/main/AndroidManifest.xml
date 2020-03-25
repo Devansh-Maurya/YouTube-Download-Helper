@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="maurya.devansh.y2matedownloadhelper">
+    package="maurya.devansh.youtubedownloadhelper">
 
     <application
         android:allowBackup="true"
@@ -12,8 +12,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".Y2MateHelperActivity"
-            android:label="Y2Mate Download Helper"
+        <activity android:name="maurya.devansh.youtubedownloadhelper.Y2MateHelperActivity"
+            android:label="@string/download_video"
             android:theme="@android:style/Theme.Translucent.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".BrowserChooserActivity">
+        <activity android:name="maurya.devansh.youtubedownloadhelper.BrowserChooserActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

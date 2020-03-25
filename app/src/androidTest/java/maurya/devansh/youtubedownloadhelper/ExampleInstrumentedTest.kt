@@ -1,4 +1,4 @@
-package maurya.devansh.y2matedownloadhelper
+package maurya.devansh.youtubedownloadhelper
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
