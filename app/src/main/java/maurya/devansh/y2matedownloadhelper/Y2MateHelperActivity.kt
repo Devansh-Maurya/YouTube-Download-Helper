@@ -1,6 +1,7 @@
 package maurya.devansh.y2matedownloadhelper
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -15,7 +16,6 @@ class Y2MateHelperActivity : AppCompatActivity() {
         when {
             intent?.action == Intent.ACTION_SEND -> {
                 if (intent.type == "text/plain") {
-                    Log.d("Helper", intent.toString())
                     textView.text = intent.getStringExtra(Intent.EXTRA_TEXT)
                     openUrlInBrowser(intent.getStringExtra(Intent.EXTRA_TEXT) ?: "")
                 }
@@ -24,6 +24,8 @@ class Y2MateHelperActivity : AppCompatActivity() {
     }
 
     private fun openUrlInBrowser(url: String) {
-
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+        intent.setPackage("com.android.chrome")
+        startActivity(intent)
     }
 }
