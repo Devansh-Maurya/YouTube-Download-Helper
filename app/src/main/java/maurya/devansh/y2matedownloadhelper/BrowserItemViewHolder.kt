@@ -31,7 +31,8 @@ class BrowserItemViewHolder(private val view: View, private val clickAction: (St
             val browserName = getBrowserName(packageName)
             browserNameTV.text = browserName
             setOnClickListener {
-                clickAction(packageName)
+                if (browserName != getBrowserName(getDefaultBrowserPackageName()))
+                    clickAction(packageName)
             }
         }
     }
