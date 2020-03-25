@@ -74,3 +74,6 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+
+# Do not ignore app main apk
+!YouTube Download Helper.apk
